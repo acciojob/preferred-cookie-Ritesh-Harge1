@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <title>Customizable Font</title>
+  <style>
+    :root {
+      --fontsize: 16px;
+      --fontcolor: #000000;
+    }
 
-  <body>
-    <!-- the entire body must be written by student -->
-    <form>
-      <label for="fontsize">Font Size:</label>
-      <input
-        type="number"
-        id="fontsize"
-        name="fontsize"
-        min="8"
-        max="72"
-        value="16"
-      />
-      <br />
-      <label for="fontcolor">Font Color:</label>
-      <input type="color" id="fontcolor" name="fontcolor" value="#000000" />
-      <br />
-      <input type="submit" value="Save" />
-    </form>
+    body {
+      font-size: var(--fontsize);
+      color: var(--fontcolor);
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
 
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="number"] {
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Customizable Font Settings</h1>
+  <form id="font-form">
+    <label for="fontsize">Font Size (8-72 px):</label>
+    <input type="number" id="fontsize" min="8" max="72" value="16">
+
+    <label for="fontcolor">Font Color:</label>
+    <input type="color" id="fontcolor" value="#000000">
+
+    <input type="submit" value="Save">
+  </form>
+
+  <script src="./script.js"></script>
+</body>
 </html>
+
